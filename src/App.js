@@ -4,6 +4,7 @@ import './App.css';
 
 import HomePage from './page/homepage/homepage';
 import ShopPage from './page/shop/shop';
+import Header from './components/header/header';
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   return (
 
     <div>
+
+      <Header />
 
       <Switch>
 
