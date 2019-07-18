@@ -45,9 +45,9 @@ class SignIn extends Component {
 
                 <form onSubmit={() => this.handleSubmit}>
 
-                    <FormInput name="email" label="Email" value={this.state.email} required handleChange={() => this.handleChange} />
+                    <FormInput name="email" label="Email" value={this.state.email} required handleChange={this.handleChange} />
 
-                    <FormInput name="password" label="Password" value={this.state.password} required handleChange={() => this.handleChange} />
+                    <FormInput name="password" label="Password" value={this.state.password} required handleChange={this.handleChange} />
 
                     <div className="buttons">
 
