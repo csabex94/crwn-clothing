@@ -5,12 +5,13 @@ import { selectCollection } from '../../redux/shop/shop.selector';
 
 import CollectionItem from '../../components/collection-item/collection-item';
 
+
 import './collection.scss';
 
 
 const Collection = ({ collection }) => {
 
-    const { title, items } = collection;
+    const { title, items } = collection ? collection : '';
     
     return (
 
@@ -20,7 +21,7 @@ const Collection = ({ collection }) => {
 
             <div className="items">
 
-                { items.map(item => ( <CollectionItem key={item.id} item={item} /> )) }
+                { items ? items.map(item => ( <CollectionItem key={item.id} item={item} /> )) : <h2>Loading...</h2> }
 
             </div>
             
