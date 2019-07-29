@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -13,45 +13,37 @@ import { checkUserSession } from './redux/user/user.actions';
 
 import SignInAndSignUp from './page/sign-in-and-sign-up/sign-in-and-sign-up';
 
-
 import './App.css';
 
+const App = ({ checkUserSession, currentUser }) => {
 
-class App extends Component {
+  useEffect(() => {
 
-  componentDidMount() {
+    checkUserSession()
 
-    const { checkUserSession } = this.props;
+  }, [checkUserSession]);
 
-    checkUserSession();
+  return (
 
-  }
+    <div>
 
-  render() {
+      <Header />
 
-    return (
+      <Switch>
 
-      <div>
-  
-        <Header />
-  
-        <Switch>
-  
-          <Route exact path="/" component={HomePage} />
-  
-          <Route path="/shop" component={ShopPage} />
+        <Route exact path="/" component={HomePage} />
 
-          <Route exact path="/checkout" component={CheckoutPage} />
-  
-          <Route exact path="/signin" render={() => this.props.currentUser ? (<Redirect to="/" />) : (<SignInAndSignUp />) } />
-  
-        </Switch>
-  
-      </div>
-  
-    );
+        <Route path="/shop" component={ShopPage} />
 
-  }
+        <Route exact path="/checkout" component={CheckoutPage} />
+
+        <Route exact path="/signin" render={() => currentUser ? (<Redirect to="/" />) : (<SignInAndSignUp />) } />
+
+      </Switch>
+
+    </div>
+
+  );
 
 }
 

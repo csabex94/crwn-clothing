@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { selectCollection } from '../../redux/shop/shop.selector';
@@ -11,7 +11,7 @@ import './collection.scss';
 
 const Collection = ({ collection }) => {
 
-    const { title, items } = collection ? collection : '';
+    const { title, items } = collection ? collection : ( <h2>Loading...</h2> )
     
     return (
 
