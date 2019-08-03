@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 const OptionContainerStyles = css`
     padding: 10px 15px;
     cursor: pointer;
+
+    @media screen and (max-width: 800px) {
+        padding: 5px 10px;
+    }
 `;
 
 
@@ -14,12 +18,25 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+
+    @media screen and (max-width: 800px) {
+        height: 60px;
+        paadding: 10px;
+        margin-bottom: 20px;
+    }
+
 `;
 
 export const LogoContainer = styled(Link)`
     height: 100%;
     width: 70px;
     padding: 25px 80px;
+
+    @media screen and (max-width: 800px) {
+        width: 30px;
+        padding: 0;
+    }
+
 `;
 
 export const OptionsContainer = styled.div`
@@ -29,6 +46,12 @@ export const OptionsContainer = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding: 0 50px;
+
+    @media screen and (max-width: 800px) {
+        width: 80%;
+        padding: 0;
+    }s
+
 `; 
 
 export const OptionLink = styled(Link)`

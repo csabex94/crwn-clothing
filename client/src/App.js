@@ -13,7 +13,9 @@ import { checkUserSession } from './redux/user/user.actions';
 
 import SignInAndSignUp from './page/sign-in-and-sign-up/sign-in-and-sign-up';
 
-import './App.css';
+import { GlobalStyle } from './global.styles';
+
+
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -26,6 +28,8 @@ const App = ({ checkUserSession, currentUser }) => {
   return (
 
     <div>
+
+      <GlobalStyle />
 
       <Header />
 
