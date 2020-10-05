@@ -4,13 +4,13 @@ import 'firebase/auth';
 
 
 const config = {
-    apiKey: "AIzaSyCLiYvzSCY_5VtGOg9Psq0XjzrQQhenVGE",
-    authDomain: "crwn-db-b11a8.firebaseapp.com",
-    databaseURL: "https://crwn-db-b11a8.firebaseio.com",
-    projectId: "crwn-db-b11a8",
-    storageBucket: "",
-    messagingSenderId: "417115861515",
-    appId: "1:417115861515:web:2151e0de396bb84c"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 }
 
 
